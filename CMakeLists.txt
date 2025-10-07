@@ -25,7 +25,11 @@ install(TARGETS Octree EXPORT OctreeTargets
 install(EXPORT OctreeTargets
         FILE OctreeTargets.cmake
         NAMESPACE Octree::
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/Octree)
+        DESTINATION share/Octree)
 
 install(FILES ${OCTREE_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Octree)
 
+install(FILES
+    "${PROJECT_SOURCE_DIR}/cmake/OctreeConfig.cmake"
+    DESTINATION share/Octree
+)
